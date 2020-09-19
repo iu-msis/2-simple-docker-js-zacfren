@@ -5,6 +5,9 @@ var app = new Vue({
     userEmail:' ',
     userImgLarge:' ',
     userImgThumb:' ',
+    userAge:' ',
+    userCountry:' ',
+    userBirthday:' '
   },
   created() {
       this.fetchUser();
@@ -21,6 +24,9 @@ var app = new Vue({
           this.userEmail = userData.email;
           this.userImgLarge = userData.picture.large;
           this.userImgThumb = userData.picture.thumbnail;
+          this.userAge = userData.dob.age;
+          this.userCountry = userData.location.country;
+          this.userBirthday = userData.dob.data
         }};
     }
   }
