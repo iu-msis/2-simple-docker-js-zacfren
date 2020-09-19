@@ -1,12 +1,14 @@
 var app = new Vue({
   el: '#userProfile',
   data: {
-    userName:'John Doe',
-    userEmail:'jdoe@iu.edu',
+    userName:' ',
+    userEmail:' ',
+    userImgLarge:' ',
+    userImgThumb:' ',
   },
   created() {
       this.fetchUser();
-    ),
+    },
 
     methods: {
       fetchUser: function() {
@@ -17,6 +19,8 @@ var app = new Vue({
           console.log(userData);
           this.userName = userData.name.first + " " + userData.name.last;
           this.userEmail = userData.email;
+          this.userImgLarge = userData.picture.large;
+          this.userImgThumb = userData.picture.thumbnail;
         }};
     }
   }

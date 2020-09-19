@@ -77,6 +77,9 @@
       <div id="userProfile">
         <h4>Name - {{userName}}</h4>
         <h4>Email - {{userEmail}}</h4>
+        <a v-bind:href="userImgLarge">
+          <img v-bind:src="userImgThumb">
+        </a>
 
 
 
@@ -145,7 +148,7 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="js/profile.app.js"></script>
 
   </body>
