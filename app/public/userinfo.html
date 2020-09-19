@@ -75,67 +75,19 @@
       </nav>
 
       <div id="userProfile">
-        <h4>Name - {{userName}}</h4>
-        <h4>Email - {{userEmail}}</h4>
         <a v-bind:href="userImgLarge">
           <img v-bind:src="userImgThumb">
         </a>
 
-
-
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Photo</th>
-                <th scope="col">Name</th>
-                <th scope="col">Country</th>
-                <th scope="col">DOB</th>
-                <th scope="col">Age</th>
-                <th scope="col">Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><a href="https://randomuser.me/api/portraits/lego/1.jpg"><img src="img/lego1.jpg" width="70" height="60"></a></td>
-                <td>Tom</td>
-                <td>United States</td>
-                <td>4/15/1985</td>
-                <td>35</td>
-                <td><a href="mailto:tommy85@gmail.com">Send mail</a></td>
-
-              </tr>
-              <tr>
-                <td><a href="https://randomuser.me/api/portraits/lego/3.jpg"><img src="img/lego2.jpg" width="70" height="60"></a></td>
-                <td>Joseph</td>
-                <td>Mexico</td>
-                <td>2/22/1970</td>
-                <td>50</td>
-                <td><a href="mailto:joe123@gmail.com">Send mail</a></td>
-
-              </tr>
-              <tr>
-
-                <td><a href="https://randomuser.me/api/portraits/lego/8.jpg"><img src="img/lego3.jpg" width="70" height="60"></a></td>
-                <td>Henry</td>
-                <td>Canada</td>
-                <td>7/4/1992</td>
-                <td>28</td>
-                <td><a href="mailto:henny@gmail.com">Send mail</a></td>
-
-              </tr>
-            </tbody>
-          </table>
-
-<br><br>
-
-
-              <div id="footer1">
-                <p><b> Citation of Photos: </b></p>
-                <p>Armstrong, Keith. “Lego Person.” <i>Profile Photos</i>, randomuser.me/photos.</p>
-              </div>
+        <h3>Name - {{userName}}</h3>
+        <h4>Email:</h4>
+        <a v-bind:href=" 'mailto:' + userEmail"> {{userEmail}}
+        </a>
 
 
 
+
+      </div>
 
 
     <!-- Optional JavaScript -->
@@ -143,11 +95,8 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="js/profile.app.js"></script>
 
