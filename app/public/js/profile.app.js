@@ -1,16 +1,21 @@
 var app = new Vue({
   el: '#userProfile',
   data: {
-    userName:' ',
-    userEmail:' ',
-    userImgLarge:' ',
-    userImgThumb:' ',
-    userAge:' ',
-    userCountry:' ',
-    userBirthday:' '
+    userName:'Jane Doe',
+    userEmail:'jdoe@iu.edu',
+
   },
   created() {
       this.fetchUser();
+    },
+
+    methods: {
+      warn: function (message, event) {
+        if (event) {
+          event.preventDefault()
+        }
+        alert(message)
+      }
     },
 
     methods: {
@@ -22,12 +27,7 @@ var app = new Vue({
           console.log(userData);
           this.userName = userData.name.first + " " + userData.name.last;
           this.userEmail = userData.email;
-          this.userImgLarge = userData.picture.large;
-          this.userImgThumb = userData.picture.thumbnail;
-          this.userAge = userData.dob.age;
-          this.userCountry = userData.location.country;
-          this.userBirthday = userData.dob.data
-        }};
+        });
     }
   }
 })
