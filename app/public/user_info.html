@@ -10,8 +10,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -40,52 +38,37 @@
 
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
           <ul class="navbar-nav mr-auto">
-
             <li class="nav-item active">
-
               <a class="nav-link" href="index.html"><b>Home</b> <span class="sr-only">(current)</span></a>
-
             </li>
 
 
             <li class="nav-item active">
-
               <a id="line" class="nav-link" href="user_info.html"><b>User Info</b> <span class="sr-only">(current)</span></a>
-
             </li>
 
 
             <li class="nav-item active">
-
               <a class="nav-link" href="books.html"><b>Books</b> <span class="sr-only">(current)</span></a>
-
             </li>
-
-
-
 
           </ul>
-
-
-
         </div>
-
       </nav>
 
-      <div id="userProfile">
-        <a v-bind:href="userImgLarge">
-          <img v-bind:src="userImgThumb">
-        </a>
+      <div id='userProfile'>
 
         <h3>Name - {{userName}}</h3>
-        <h3> Email - <a v-bind:href=" 'mailto:' + userEmail"> {{userEmail}}</a> </h3>
-
-
-
+        <h3> Email - {{userEmail}} </h3>
 
       </div>
+
+
+      <form v-on:submit.prevent="onSubmit">
+        <button>Refresh</button>
+      </form>
+
 
 
     <!-- Optional JavaScript -->
