@@ -1,0 +1,49 @@
+waitingApp = new Vue({
+  el: '#cardPaneLeft',
+  data:{
+    CtList: [{
+      comment: '',
+    }],
+      newCommentForm: {
+        comment: '',
+      }
+  },
+  methods:{
+    fetchUser(){
+      fetch('api/comments/')
+      .then(response => response.json())
+      .then(json => {
+        this.CtList=json;
+        console.log(this.CtList);
+      });
+    },
+    createUser(){
+      this.newCommentForm.userID = (this.newCommentForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
+      fetch('api/members/post.php', {
+        method:'POST',
+        body: JSON.stringify(this.newUser),
+        headers: {
+          "Content-Type": "applications/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => {
+        console.log("Returned from post:", json);
+        this.CtList.push(json[0]);
+        this.newCommentForm = this.newUserData();
+      });
+      console.log("Creating (POSTing)...I");
+      console.log(this.newCommentForm);
+    },
+    newUserData() {
+      return {
+        fname: '',
+        lname: '',
+        address: '',
+      }
+    }
+  },
+  created(){
+    this.fetchUser();
+  }
+});
