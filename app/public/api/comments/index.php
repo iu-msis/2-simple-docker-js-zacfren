@@ -11,7 +11,7 @@ $db = DbConnection::getConnection();
 
 if (isset($_GET['guid'])) {
   // This is an example of a parameterized query
-  $sql = 'SELECT * FROM Comments WHERE patientGuid = ?';
+  $sql = 'SELECT * FROM Comments WHERE commentGuid = ?';
   $vars = [ $_GET['guid'] ];
 }
 

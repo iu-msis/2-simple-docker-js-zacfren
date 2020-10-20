@@ -1,11 +1,13 @@
 waitingApp = new Vue({
-  el: '#cardPaneLeft',
+  el: '#commentPage',
   data:{
-    CtList: [{
-      comment: '',
+    Comments: [{
+      id: '',
+      commentMessage: ''
     }],
-      newCommentForm: {
-        comment: '',
+      newComment: {
+        id: '',
+        commentText: '',
       }
   },
   methods:{
@@ -14,10 +16,10 @@ waitingApp = new Vue({
       .then(response => response.json())
       .then(json => {
         this.CtList=json;
-        console.log(this.CtList);
+        console.log(this.Comments);
       });
     },
-    createUser(){
+    submitComment(){
       this.newCommentForm.userID = (this.newCommentForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
       fetch('api/members/post.php', {
         method:'POST',
@@ -33,17 +35,16 @@ waitingApp = new Vue({
         this.newCommentForm = this.newUserData();
       });
       console.log("Creating (POSTing)...I");
-      console.log(this.newCommentForm);
+      console.log(this.newComment);
     },
-    newUserData() {
+    newComment() {
       return {
-        fname: '',
-        lname: '',
-        address: '',
+        id: '',
+        commentText: '',
       }
     }
   },
   created(){
-    this.fetchUser();
+    this.fetchComment();
   }
 });
