@@ -1,5 +1,5 @@
 waitingApp = new Vue({
-  el: '#commentsId',
+  el: '#commentsPage',
   data:{
     comments: [{
       id: '',
