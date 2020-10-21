@@ -1,7 +1,7 @@
 waitingApp = new Vue({
-  el: '#commentPage',
+  el: '#commentsId',
   data:{
-    Comments: [{
+    comments: [{
       id: '',
       commentMessage: ''
     }],
@@ -15,8 +15,8 @@ waitingApp = new Vue({
       fetch('api/comments/')
       .then(response => response.json())
       .then(json => {
-        this.CtList=json;
-        console.log(this.Comments);
+        this.comments=json;
+        console.log(this.comments);
       });
     },
     submitComment(){

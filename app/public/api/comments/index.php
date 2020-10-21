@@ -8,11 +8,15 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // $sql = 'SELECT * FROM assignCertification ac';
 // $vars = [];
+$sql = 'SELECT * FROM Comments';
+$vars = [];
 
-if (isset($_GET['guid'])) {
+
+
+if (isset($_GET['commentGuid'])) {
   // This is an example of a parameterized query
   $sql = 'SELECT * FROM Comments WHERE commentGuid = ?';
-  $vars = [ $_GET['guid'] ];
+  $vars = [ $_GET['commentGuid'] ];
 }
 
 $stmt = $db->prepare($sql);

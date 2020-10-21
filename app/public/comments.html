@@ -77,6 +77,14 @@
 
 <h2>Book Comments</h2>
 
+      <div class="container-fluid">
+        <div class="row" id="commentsId">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+            <div class="comments" v-for="comment in comments">
+              <span class="commentGuid">Comment ID: {{ comment.commentGuid }}</span>,<br/>
+              <span class="commentMessage">Comment Message:: {{ comment.commentMessage }}</span>
+            </div><br/>
+
 
 
 
